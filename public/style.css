@@ -256,7 +256,7 @@ section {
         font-size: 62.5%;
     }
 }
-.box {
+main {
     background: var(--putih1);
     padding: 2rem;
     width: 70%;
