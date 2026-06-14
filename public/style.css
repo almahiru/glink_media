@@ -269,10 +269,10 @@ section {
     margin: 1.5rem 0.5rem;
 }
 .btn {
-    width: 30rem;
-    font-size: 2.9rem;
+    width: 60rem;
+    font-size: 2rem;
     padding: 0.6rem;
-    font-weight: 800;
+    font-weight: 700;
     border-radius: 0.8rem;
     outline: none;
     background: var(--jj);
