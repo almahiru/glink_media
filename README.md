@@ -1,4 +1,4 @@
-# Website
+# Website Sederhana 
 Glink-Media Lamongan
 # Pembuat
 M.Al Mahiru Jiddan 
