@@ -263,6 +263,22 @@ section {
     margin: 10%;
     border-radius: 4rem;
 }
+.button {
+    text-align: center;
+    margin: 1.5rem 0.5rem;
+}
+.btn {
+    width: 30rem;
+    font-size: 2.9rem;
+    padding: 0.6rem;
+    font-weight: 800;
+    border-radius: 0.8rem;
+    outline: none;
+    background: var(--jj);
+    border: none;
+    box-shadow: 0 0.1rem 0.4rem var(--gray-dark);
+    color: var(--putih1);
+}
 /*------------ LOGIN ------------*/
 .box-login h2 {
     font-size: 3.5rem;
@@ -282,22 +298,6 @@ section {
     font-weight: 700;
     border-radius: 0.5rem;
     outline: none;
-}
-.button {
-    text-align: center;
-    margin: 1.5rem 0.5rem;
-}
-.btn-login {
-    width: 100%;
-    font-size: 2.9rem;
-    padding: 0.6rem;
-    font-weight: 800;
-    border-radius: 0.8rem;
-    outline: none;
-    background: var(--jj);
-    border: none;
-    box-shadow: 0 0.1rem 0.4rem var(--gray-dark);
-    color: var(--putih1);
 }
 .box-login p {
     text-align: center;
