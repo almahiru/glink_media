@@ -1,0 +1,192 @@
+<!-- @format -->
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Mapping Jaringan + Satellite</title>
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+        <link rel="icon" href="assets/img/favicon.ico" />
+        <meta name="theme-color" content="#EEEEEE" />
+        <!-- icons -->
+        <script src="https://unpkg.com/feather-icons"></script>
+        <link
+            href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+            rel="stylesheet" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap"
+            rel="stylesheet" />
+        <!-- Animasi-->
+        <link
+            href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+            rel="stylesheet" />
+        <style>
+            body {
+                margin: 0;
+                font-family: Segoe UI;
+                background: #0f172a;
+                color: #fff;
+            }
+            #map {
+                height: 90vh;
+            }
+            .topbar {
+                background: #111827;
+                padding: 10px;
+                display: flex;
+                gap: 10px;
+            }
+            button {
+                padding: 6px 12px;
+                border: none;
+                border-radius: 6px;
+                cursor: pointer;
+            }
+            .btn-odc {
+                background: #ef4444;
+                color: #fff;
+            }
+            .btn-odp {
+                background: #3b82f6;
+                color: #fff;
+            }
+            .btn-client {
+                background: #22c55e;
+                color: #fff;
+            }
+            .btn-kabel {
+                background: #a855f7;
+                color: #fff;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="topbar">
+            <button class="btn-odc" onclick="setType('ODC')">Tambah ODC</button>
+            <button class="btn-odp" onclick="setType('ODP')">Tambah ODP</button>
+            <button class="btn-client" onclick="setType('CLIENT')">
+                Tambah Client
+            </button>
+            <button class="btn-kabel" onclick="enableCableMode()">
+                Mode Kabel
+            </button>
+        </div>
+
+        <div id="map"></div>
+
+        <script>
+            // ===== BASE LAYERS =====
+            const osm = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                { maxZoom: 49 }
+            );
+
+            const satellite = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+                { maxZoom: 49 }
+            );
+
+            const map = L.map("map", {
+                center: [-7.3019, 112.218016],
+                zoom: 15,
+                layers: [satellite] // default satelit
+            });
+
+            // Layer switch control
+            const baseMaps = {
+                "Street Map": osm,
+                Satellite: satellite
+            };
+
+            L.control.layers(baseMaps).addTo(map);
+
+            // ===== SYSTEM =====
+            let currentType = null;
+            let cableMode = false;
+            let selectedNode = null;
+
+            function setType(type) {
+                currentType = type;
+                cableMode = false;
+                alert("Klik map untuk tambah " + type);
+            }
+
+            function enableCableMode() {
+                cableMode = true;
+                currentType = null;
+                alert("Klik 2 node untuk tarik kabel");
+            }
+
+            function createNode(lat, lng, type) {
+                const name = prompt("Nama " + type + ":");
+                if (!name) return;
+
+                const color =
+                    type === "ODC" ? "red" : type === "ODP" ? "blue" : "green";
+
+                const marker = L.circleMarker([lat, lng], {
+                    radius: 8,
+                    color: color,
+                    fillColor: color,
+                    fillOpacity: 1
+                }).addTo(map);
+
+                marker.bindPopup(`<b>${name}</b><br>${type}`);
+
+                marker.on("click", function () {
+                    if (!cableMode) return;
+
+                    if (selectedNode == null) {
+                        selectedNode = marker;
+                    } else {
+                        drawCable(selectedNode, marker);
+                        selectedNode = null;
+                    }
+                });
+            }
+
+            function drawCable(nodeA, nodeB) {
+                const latlngs = [nodeA.getLatLng(), nodeB.getLatLng()];
+                const line = L.polyline(latlngs, {
+                    color: "#a855f7",
+                    weight: 4
+                }).addTo(map);
+
+                const distance = map
+                    .distance(nodeA.getLatLng(), nodeB.getLatLng())
+                    .toFixed(0);
+
+                const midLat = (latlngs[0].lat + latlngs[1].lat) / 2;
+                const midLng = (latlngs[0].lng + latlngs[1].lng) / 2;
+
+                L.marker([midLat, midLng], {
+                    icon: L.divIcon({
+                        html: `<div style="
+                background:#111827;
+                padding:2px 6px;
+                border-radius:6px;
+                font-size:12px;
+                color:#fff;">
+                ${distance} m
+            </div>`
+                    })
+                }).addTo(map);
+            }
+
+            map.on("click", function (e) {
+                if (currentType) {
+                    createNode(e.latlng.lat, e.latlng.lng, currentType);
+                }
+            });
+        </script>
+    </body>
+</html>
