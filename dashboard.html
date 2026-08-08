@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title id="title">Dashboard</title>
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <link rel="icon" href="assets/img/favicon.ico" />
+        <meta name="theme-color" content="#EEEEEE" />
+        <link rel="stylesheet" href="assets/css/custom.css" />
+        <link rel="stylesheet" href="assets/css/nav.css" />
+        <!-- icons -->
+        <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"
+        />
+        <script src="https://unpkg.com/feather-icons"></script>
+        <link
+            href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap"
+            rel="stylesheet"
+        />
+        <!-- Animasi-->
+        <link
+            href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+            rel="stylesheet"
+        />
+        <!-- Maps-->
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet/dist/leaflet.css"
+        />
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    </head>
+    <body>
+        <div class="app-container">
+            <div class="page page-home page-with-subnavbar">
+                <div class="toolbar tabbar tabbar-labels toolbar-bottom">
+                    <div class="toolbar-inner">
+                        <a
+                            href="dashboard.html"
+                            class="tab-link tab-link-active"
+                        >
+                            <i class="fa fa-home"></i>
+                            <p>Home</p>
+                        </a>
+                        <a href="fitur.html" class="tab-link">
+                            <i class="fa fa-list-alt"></i>
+                            <p>Fitur</p>
+                        </a>
+                        <a href="paket.html" class="tab-link">
+                            <i class="fa fa-list"></i>
+                            <p>paket</p>
+                        </a>
+                        <a href="aktivasi.html" class="tab-link">
+                            <i class="fa fa-shield"></i>
+                            <p>Aktivasi</p>
+                        </a>
+                        <a href="about.html" class="tab-link">
+                            <i class="fa fa-user"></i>
+                            <p>About</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="home-dashboard">
+            <!-------------- START NAVBAR -------------->
+            <header class="header-box">
+                <a href="#" class="header-logo">
+                    <img src="assets/img/favicon.ico" alt="Logo" />
+                    <div class="logo">
+                        Glink
+                        <span>Media</span>
+                        .
+                    </div>
+                </a>
+                <div class="header-extra">
+                    <!--a id="search-button"><i data-feather="search"></i></a-->
+                    <!--button class="btn-dark" onclick="myFunction()">
+                        <i class="fa-icon fa fa-moon-o"></i>
+                    </!button-->
+                    <a href="index.html"><i class="fa fa-close"></i></a>
+                </div>
+            </header>
+            <br />
+            <br />
+            <div class="background">
+                <div class="img-background"></div>
+            </div>
+            <main>
+                <div class="box-main">
+                    <a href="http://103.158.210.14:8080">
+                        <div class="tab-link-main">
+                            <img src="assets/img/router.png" alt="Router" />
+                            <br />
+                            <label>Router Mampir</label>
+                        </div>
+                    </a>
+                    <a href="http://103.158.210.11:88">
+                        <div class="tab-link-main">
+                            <img src="assets/img/router.png" alt="Router" />
+                            <br />
+                            <label>Router Selegi</label>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="tab-link-main">
+                            <img src="assets/img/router.png" alt="Router" />
+                            <br />
+                            <label>+</label>
+                        </div>
+                    </a>
+                </div>
+                <div class="box-main">
+                    <a href="http://us-3.hostddns.us:56499">
+                        <div class="tab-link-main">
+                            <img src="assets/img/olt.png" alt="Olt" />
+                            <br />
+                            <label>Olt Mampir</label>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="tab-link-main">
+                            <img src="assets/img/olt.png" alt="Olt" />
+                            <br />
+                            <label>Olt Selegi</label>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="tab-link-main">
+                            <img src="assets/img/olt.png" alt="Olt" />
+                            <br />
+                            <label>+</label>
+                        </div>
+                    </a>
+                </div>
+                <div class="box-main">
+                    <a href="#">
+                        <div class="tab-link-main">
+                            <img src="assets/img/olt.png" alt="Olt" />
+                            <br />
+                            <label>Acs Mampir</label>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="tab-link-main">
+                            <img src="assets/img/olt.png" alt="Olt" />
+                            <br />
+                            <label>Acs Selegi</label>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="tab-link-main">
+                            <img src="assets/img/olt.png" alt="Olt" />
+                            <br />
+                            <label>+</label>
+                        </div>
+                    </a>
+                </div>
+                <span>Lan</span>
+                <div class="box-main">
+                    <a href="http://192.129.1.1">
+                        <div class="tab-link-main">
+                            <img src="assets/img/olt.png" alt="Olt" />
+                            <br />
+                            <label>Router</label>
+                        </div>
+                    </a>
+                    <a href="https://speedtest.surakarta.go.id">
+                        <div class="tab-link-main">
+                            <img src="assets/img/olt.png" alt="Olt" />
+                            <br />
+                            <label>Speedtest</label>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="tab-link-main">
+                            <img src="assets/img/olt.png" alt="Olt" />
+                            <br />
+                            <label>+</label>
+                        </div>
+                    </a>
+                </div>
+            </main>
+        </div>
+        <footer></footer>
+        <!-------------- START SCRIPT -------------->
+        <script>
+            feather.replace();
+        </script>
+        <script src="assets/js/script.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/custom.js"></script>
+        <script src="assets/js/signup.js"></script>
+        <script src="assets/js/jquery.js"></script>
+        <script
+            defer
+            type="module"
+            src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+        ></script>
+        <script
+            defer
+            nomodule
+            src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+        ></script>
+        <!-- Animasi -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+        <script src="https://unpkg.com/leaflet.pm@0.16.0/dist/leaflet.pm.min.js"></script>
+    </body>
+</html>
