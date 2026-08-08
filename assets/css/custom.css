@@ -1,0 +1,89 @@
+/* GACS Dashboard Custom Styles */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+:root {
+    /* Modern Professional Color Palette */
+    --primary-color: #4f46e5; /* Indigo - Modern & Professional */
+    --primary-dark: #3730a3; /* Darker Indigo */
+    --primary-light: #6366f1; /* Lighter Indigo */
+
+    --secondary-color: #64748b; /* Slate Gray */
+    --success-color: #10b981; /* Emerald Green */
+    --danger-color: #ef4444; /* Red */
+    --warning-color: #f59e0b; /* Amber */
+    --info-color: #3b82f6; /* Blue */
+
+    --dark-color: #1e293b; /* Dark Slate */
+    --darker-color: #0f172a; /* Darker Slate */
+    --light-color: #f8fafc; /* Very Light Gray */
+    --gray-100: #f1f5f9; /* Light Gray */
+    --gray-200: #e2e8f0; /* Medium Light Gray */
+    --gray-300: #cbd5e1; /* Medium Gray */
+
+    --sidebar-bg: #1e293b; /* Dark Professional Sidebar */
+    --sidebar-hover: #334155; /* Sidebar Hover */
+    --topbar-bg: #ffffff; /* Clean White Topbar */
+
+    --sidebar-width: 250px;
+    --sidebar-collapsed-width: 70px;
+    --hitam: #000000;
+    --ht: #091413;
+    --putih: #ffffff;
+    --putih1: #f2f2f2f2;
+    --merah: red;
+    --hijau: #008080;
+    --jj: #21a51f;
+    --oren: #ffa100;
+    --root: #e9eef5;
+    --bb: #008cca;
+    --blue: #0d6efd;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #d63384;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #198754;
+    --teal: #20c997;
+    --cyan: #0dcaf0;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #0d6efd;
+    --secondary: #6c757d;
+    --bg: #ababab;
+    --bh: #e3e3e3;
+    --success: #198754;
+    --info: #0dcaf0;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #212529;
+    --merah7: #af1b60;
+    --bk: #121358;
+    --bk-bk: rgba(1, 1, 200, 0.6);
+}
+.color-putih {
+    color: var(--putih);
+}
+.color-hitam {
+    color: var(--hitam);
+}
+.color-bb {
+    color: var(--bb);
+}
+.color-jj {
+    color: var(--jj);
+}
+
+header {
+    background: rgba(0, 0, 0, 0.4);
+}
+.logo h3 {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--putih);
+    padding: 0.5rem;
+}
+.logo span {
+    color: var(--bb);
+}

@@ -423,6 +423,16 @@ section {
     margin-right: 1.5rem;
     color: var(--bg);
 }
+.dashboard {
+    background: var(--jj);
+    border-radius: 0.4rem;
+}
+.dashboard h2 {
+    font-weight: 900;
+    text-align: center;
+    color: var(--putih1);
+    font-size: 1.5rem;
+}
 .btn-login {
     background: var(--bk-bk);
     padding: 0.4rem;
@@ -472,7 +482,7 @@ section {
         top: 100%;
         right: -100%;
         background-color: var(--putih1);
-        width: 50%;
+        width: 40%;
         height: 100vh;
         transition: 0.3s;
         border: 0.1rem solid var(--red);
@@ -1103,4 +1113,42 @@ footer a:hover {
     background: none;
     font-size: 1.8rem;
     font-weight: 800;
+}
+.background {
+    border-radius: 0rem 0rem 5rem 5rem;
+    border: 0.1rem solid var(--hitam);
+    height: 13rem;
+    background: var(--putih);
+    padding: 1.5rem;
+}
+.img-background {
+    background-image: url(../img/logo-glink-media.jpeg);
+    height: 10rem;
+    width: 100%;
+    z-index: 9999;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+}
+.box-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box-main a {
+    text-align: center;
+    margin: 0.8rem;
+    outline: none;
+    width: 100%;
+    border-radius: 1.4rem;
+    background: var(--putih);
+    box-shadow: 0 0.1rem 0.1rem var(--hitam);
+    border: 0.3px solid var(--hitam);
+}
+.box-main img {
+    width: 4rem;
+}
+.box-main label {
+    font-size: 0.8rem;
+    font-weight: 680;
 }
